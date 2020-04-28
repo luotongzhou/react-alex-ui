@@ -1,9 +1,9 @@
-import React, { FC, useContext, FunctionComponentElement, useState } from "react"
-import classNames from "classnames"
-import { MenuContext } from "./Menu"
-import { MenuItemProps } from "./MenuItem"
-import Icon from "../Icon"
-import Transition from "../Transition"
+import React, { FC, useContext, FunctionComponentElement, useState } from 'react'
+import classNames from 'classnames'
+import { MenuContext } from './Menu'
+import { MenuItemProps } from './MenuItem'
+import Icon from '../Icon'
+import Transition from '../Transition'
 
 export interface SubMenuProps {
   index?: string
@@ -16,13 +16,13 @@ export interface SubMenuProps {
 const SubMenu: FC<SubMenuProps> = ({ index, title, children, className }) => {
   const context = useContext(MenuContext)
   const openedSubMenus = context.defaultOpenSubMenus as Array<string>
-  const isOpend = index && context.mode === "vertical" ? openedSubMenus.includes(index) : false
+  const isOpend = index && context.mode === 'vertical' ? openedSubMenus.includes(index) : false
   const [menuOpen, setOpen] = useState(isOpend)
 
-  const classes = classNames("menu-item submenu-item", className, {
-    "is-active": context.index === index,
-    "is-opened": menuOpen,
-    "is-vertical": context.mode === "vertical"
+  const classes = classNames('menu-item submenu-item', className, {
+    'is-active': context.index === index,
+    'is-opened': menuOpen,
+    'is-vertical': context.mode === 'vertical'
   })
 
   const handleClick = (e: React.MouseEvent) => {
@@ -39,13 +39,13 @@ const SubMenu: FC<SubMenuProps> = ({ index, title, children, className }) => {
     }, 300)
   }
   const clickEvents =
-    context.mode === "vertical"
+    context.mode === 'vertical'
       ? {
           onClick: handleClick
         }
       : {}
   const hoverEvents =
-    context.mode !== "vertical"
+    context.mode !== 'vertical'
       ? {
           onMouseEnter: (e: React.MouseEvent) => {
             handleMouse(e, true)
@@ -57,21 +57,21 @@ const SubMenu: FC<SubMenuProps> = ({ index, title, children, className }) => {
       : {}
 
   const renderChildren = () => {
-    const subMenuClasses = classNames("alex-submenu", {
-      "menu-opened": menuOpen
+    const subMenuClasses = classNames('alex-submenu', {
+      'menu-opened': menuOpen
     })
     const childrenComponent = React.Children.map(children, (child, i) => {
       const childElement = child as FunctionComponentElement<MenuItemProps>
-      if (childElement.type.displayName === "MenuItem") {
+      if (childElement.type.displayName === 'MenuItem') {
         return React.cloneElement(childElement, {
           index: `${index}-${i}`
         })
       } else {
-        console.error("Warning: SubMenu has a child which is not a MenuItem component")
+        console.error('Warning: SubMenu has a child which is not a MenuItem component')
       }
     })
     return (
-      <Transition animation={"zoom-in-left"} timeout={300} in={menuOpen}>
+      <Transition animation={'zoom-in-left'} timeout={300} in={menuOpen}>
         <ul className={subMenuClasses}>{childrenComponent}</ul>
       </Transition>
     )
@@ -88,6 +88,6 @@ const SubMenu: FC<SubMenuProps> = ({ index, title, children, className }) => {
   )
 }
 
-SubMenu.displayName = "SubMenu"
+SubMenu.displayName = 'SubMenu'
 
 export default SubMenu

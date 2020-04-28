@@ -1,9 +1,9 @@
-import React, { FC, useState, CSSProperties } from "react"
-import classNames from "classnames"
-import Transition from "../Transition"
-import Icon from "../Icon"
+import React, { FC, useState, CSSProperties } from 'react'
+import classNames from 'classnames'
+import Transition from '../Transition'
+import Icon from '../Icon'
 
-export type AlertType = "success" | "default" | "danger" | "warning"
+export type AlertType = 'success' | 'default' | 'danger' | 'warning'
 
 interface AlertProps {
   /**标题 */
@@ -31,13 +31,13 @@ const Alert: FC<AlertProps> = (props) => {
   const [hide, setHide] = useState(false)
   const { title, description, type, onClose, closable, className, style } = props
 
-  const classes = classNames("alex-alert", {
+  const classes = classNames('alex-alert', {
     [`alex-alert-${type}`]: type,
     [`${className}`]: className
   })
 
-  const titleClass = classNames("alex-alert-title", {
-    "bold-title": description
+  const titleClass = classNames('alex-alert-title', {
+    'bold-title': description
   })
 
   const handleClose = (e: React.MouseEvent) => {
@@ -63,7 +63,7 @@ const Alert: FC<AlertProps> = (props) => {
 }
 
 Alert.defaultProps = {
-  type: "default",
+  type: 'default',
   closable: true
 }
 

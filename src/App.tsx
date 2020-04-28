@@ -1,9 +1,9 @@
-import React from "react"
-import Button from "./components/Button"
-import Alert from "./components/Alert"
-import Menu from "./components/Menu"
-import Tabs from "./components/Tabs"
-import Icon from "./components/Icon"
+import React from 'react'
+import Button from './components/Button'
+import Alert from './components/Alert'
+import Menu from './components/Menu'
+import Tabs from './components/Tabs'
+import Icon from './components/Icon'
 const { Item, SubMenu } = Menu
 
 function App() {
@@ -43,7 +43,7 @@ function App() {
         />
       </div>
       <div style={{ marginBottom: 20 }}>
-        <Menu mode="vertical" defaultIndex="1" defaultOpenSubMenus={["3"]} onSelect={(index) => console.log(index)}>
+        <Menu mode="vertical" defaultIndex="1" defaultOpenSubMenus={['3']} onSelect={(index) => console.log(index)}>
           <Item>1111</Item>
           <Item>2222</Item>
           <Item disabled>3333</Item>

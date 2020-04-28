@@ -1,6 +1,6 @@
-import React, { FC, useContext, CSSProperties } from "react"
-import classNames from "classnames"
-import { MenuContext } from "./Menu"
+import React, { FC, useContext, CSSProperties } from 'react'
+import classNames from 'classnames'
+import { MenuContext } from './Menu'
 export interface MenuItemProps {
   index?: string
   /**选项是否被禁用 */
@@ -14,12 +14,12 @@ export interface MenuItemProps {
 export const MenuItem: FC<MenuItemProps> = (props) => {
   const { index, disabled, className, style, children } = props
   const context = useContext(MenuContext)
-  const classes = classNames("menu-item", className, {
-    "is-disabled": disabled,
-    "is-active": context.index === index
+  const classes = classNames('menu-item', className, {
+    'is-disabled': disabled,
+    'is-active': context.index === index
   })
   const handleClick = () => {
-    if (context.onSelect && !disabled && typeof index === "string") {
+    if (context.onSelect && !disabled && typeof index === 'string') {
       context.onSelect(index)
     }
   }
@@ -30,6 +30,6 @@ export const MenuItem: FC<MenuItemProps> = (props) => {
   )
 }
 
-MenuItem.displayName = "MenuItem"
+MenuItem.displayName = 'MenuItem'
 
 export default MenuItem

@@ -1,4 +1,4 @@
-import React, { FC } from "react"
+import React, { FC } from 'react'
 
 export interface TabItemProps {
   /** Tab选项上面的文字 */
