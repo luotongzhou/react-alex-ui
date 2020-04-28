@@ -20,7 +20,7 @@ const SubMenu: FC<SubMenuProps> = ({ index, title, children, className }) => {
   const [menuOpen, setOpen] = useState(isOpend)
 
   const classes = classNames("menu-item submenu-item", className, {
-    "is-active": index ? context.index.startsWith(index) : false,
+    "is-active": context.index === index,
     "is-opened": menuOpen,
     "is-vertical": context.mode === "vertical"
   })

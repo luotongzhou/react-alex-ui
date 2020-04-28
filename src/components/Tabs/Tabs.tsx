@@ -41,15 +41,17 @@ const Tabs: FC<TabsProps> = (props) => {
     return React.Children.map(children, (child, index) => {
       const childElement = child as FunctionComponentElement<TabItemProps>
       const { label, disabled } = childElement.props
-      const classes = classNames('alex-tabs-nav-item', {
-        'is-active': activeIndex === index,
-        'disabled': disabled,
+      const classes = classNames("alex-tabs-nav-item", {
+        "is-active": activeIndex === index,
+        disabled: disabled
       })
       return (
-        <li 
-          className={classes} 
+        <li
+          className={classes}
           key={`nav-item-${index}`}
-          onClick={(e) => {handleClick(e, index, disabled)}}
+          onClick={(e) => {
+            handleClick(e, index, disabled)
+          }}
         >
           {label}
         </li>
@@ -75,7 +77,7 @@ const Tabs: FC<TabsProps> = (props) => {
 
 Tabs.defaultProps = {
   defaultIndex: 0,
-  type: 'line'
+  type: "line"
 }
 
 export default Tabs

@@ -10,7 +10,7 @@ import "./fix_info_style.scss"
 library.add(fas)
 const wrapperStyle = {
   padding: "20px 40px",
-  width: "500px"
+  width: "700px"
 }
 
 const storyWrapper = (stroyFn) => (
@@ -31,7 +31,7 @@ addParameters({ info: { inline: true, header: false } })
 
 const loaderFn = () => {
   return [
-    // require('../src/welcome.stories.tsx'),
+    require('../src/welcome.stories.tsx'),
     require("../src/components/Button/Button.stories.tsx")
     // require('../src/components/Alert/alert.stories.tsx'),
     // require('../src/components/Menu/menu.stories.tsx'),
