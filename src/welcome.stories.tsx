@@ -1,5 +1,5 @@
-import React from "react"
-import { storiesOf } from "@storybook/react"
+import React from 'react'
+import { storiesOf } from '@storybook/react'
 
 const markdownText = `
 ### 使用 React+typescript 从零到一打造一套你自己的组件库
@@ -41,8 +41,8 @@ import { Button } from 'react-alex-ui'
 
 * 🎉涉及全部流程，包括最后的 npm publish，husky提交发布前验证，travis CI/CD 集成，发布文档站点等
 `
-storiesOf("欢迎来到课程", module).add(
-  "welcome",
+storiesOf('欢迎来到课程', module).add(
+  'welcome',
   () => {
     return <h2>欢迎来到 react-alex-ui 组件库</h2>
   },
