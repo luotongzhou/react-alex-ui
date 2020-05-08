@@ -9,9 +9,9 @@
 /coverage
 
 # production
-/build
-/dist
-/storybook-static
+build
+dist
+storybook-static
 
 # misc
 .DS_Store

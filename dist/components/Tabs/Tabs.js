@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import classNames from "classnames";
+import React, { useState } from 'react';
+import classNames from 'classnames';
 /**
  *选项卡切换组件。
  *提供平级的区域将大块内容进行收纳和展现，保持界面整洁。
@@ -17,9 +17,9 @@ var Tabs = function (props) {
             }
         }
     };
-    var navClass = classNames("alex-tabs-nav", {
-        "nav-line": type === "line",
-        "nav-card": type === "card"
+    var navClass = classNames('alex-tabs-nav', {
+        'nav-line': type === 'line',
+        'nav-card': type === 'card'
     });
     var renderNavLinks = function () {
         return React.Children.map(children, function (child, index) {
@@ -27,9 +27,11 @@ var Tabs = function (props) {
             var _a = childElement.props, label = _a.label, disabled = _a.disabled;
             var classes = classNames('alex-tabs-nav-item', {
                 'is-active': activeIndex === index,
-                'disabled': disabled,
+                disabled: disabled
             });
-            return (React.createElement("li", { className: classes, key: "nav-item-" + index, onClick: function (e) { handleClick(e, index, disabled); } }, label));
+            return (React.createElement("li", { className: classes, key: "nav-item-" + index, onClick: function (e) {
+                    handleClick(e, index, disabled);
+                } }, label));
         });
     };
     var renderContent = function () {

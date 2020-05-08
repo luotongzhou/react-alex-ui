@@ -20,8 +20,8 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-import React from "react";
-import classNames from "classnames";
+import React from 'react';
+import classNames from 'classnames';
 /**
  *页面中最常用的的按钮元素，适合于完成特定的交互，支持 HTML button 和 a 链接 的所有属性
  *
@@ -34,12 +34,12 @@ var Button = function (props) {
     // btn, btn-lg, btn-primary
     , ["btnType", "className", "disabled", "size", "children", "href"]);
     // btn, btn-lg, btn-primary
-    var classes = classNames("btn", className, (_a = {},
+    var classes = classNames('btn', className, (_a = {},
         _a["btn-" + btnType] = btnType,
         _a["btn-" + size] = size,
-        _a.disabled = btnType === "link" && disabled,
+        _a.disabled = btnType === 'link' && disabled,
         _a));
-    if (btnType === "link" && href) {
+    if (btnType === 'link' && href) {
         return (React.createElement("a", __assign({ className: classes, href: href }, restProps), children));
     }
     else {
@@ -48,6 +48,6 @@ var Button = function (props) {
 };
 Button.defaultProps = {
     disabled: false,
-    btnType: "default"
+    btnType: 'default'
 };
 export default Button;

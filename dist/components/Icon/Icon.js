@@ -39,6 +39,6 @@ export var Icon = function (props) {
     var classes = classNames('alex-icon', className, (_a = {},
         _a["icon-" + theme] = theme,
         _a));
-    return (React.createElement(FontAwesomeIcon, __assign({ className: classes }, restProps)));
+    return React.createElement(FontAwesomeIcon, __assign({ className: classes }, restProps));
 };
 export default Icon;

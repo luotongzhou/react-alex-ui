@@ -9,7 +9,7 @@ export var MenuItem = function (props) {
         'is-active': context.index === index
     });
     var handleClick = function () {
-        if (context.onSelect && !disabled && (typeof index === 'string')) {
+        if (context.onSelect && !disabled && typeof index === 'string') {
             context.onSelect(index);
         }
     };

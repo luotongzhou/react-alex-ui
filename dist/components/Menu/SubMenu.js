@@ -9,21 +9,21 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-import React, { useContext, useState } from "react";
-import classNames from "classnames";
-import { MenuContext } from "./Menu";
-import Icon from "../Icon";
-import Transition from "../Transition";
+import React, { useContext, useState } from 'react';
+import classNames from 'classnames';
+import { MenuContext } from './Menu';
+import Icon from '../Icon';
+import Transition from '../Transition';
 var SubMenu = function (_a) {
     var index = _a.index, title = _a.title, children = _a.children, className = _a.className;
     var context = useContext(MenuContext);
     var openedSubMenus = context.defaultOpenSubMenus;
-    var isOpend = index && context.mode === "vertical" ? openedSubMenus.includes(index) : false;
+    var isOpend = index && context.mode === 'vertical' ? openedSubMenus.includes(index) : false;
     var _b = useState(isOpend), menuOpen = _b[0], setOpen = _b[1];
-    var classes = classNames("menu-item submenu-item", className, {
-        "is-active": index ? context.index.startsWith(index) : false,
-        "is-opened": menuOpen,
-        "is-vertical": context.mode === "vertical"
+    var classes = classNames('menu-item submenu-item', className, {
+        'is-active': context.index === index,
+        'is-opened': menuOpen,
+        'is-vertical': context.mode === 'vertical'
     });
     var handleClick = function (e) {
         e.preventDefault();
@@ -37,12 +37,12 @@ var SubMenu = function (_a) {
             setOpen(toggle);
         }, 300);
     };
-    var clickEvents = context.mode === "vertical"
+    var clickEvents = context.mode === 'vertical'
         ? {
             onClick: handleClick
         }
         : {};
-    var hoverEvents = context.mode !== "vertical"
+    var hoverEvents = context.mode !== 'vertical'
         ? {
             onMouseEnter: function (e) {
                 handleMouse(e, true);
@@ -53,21 +53,21 @@ var SubMenu = function (_a) {
         }
         : {};
     var renderChildren = function () {
-        var subMenuClasses = classNames("alex-submenu", {
-            "menu-opened": menuOpen
+        var subMenuClasses = classNames('alex-submenu', {
+            'menu-opened': menuOpen
         });
         var childrenComponent = React.Children.map(children, function (child, i) {
             var childElement = child;
-            if (childElement.type.displayName === "MenuItem") {
+            if (childElement.type.displayName === 'MenuItem') {
                 return React.cloneElement(childElement, {
                     index: index + "-" + i
                 });
             }
             else {
-                console.error("Warning: SubMenu has a child which is not a MenuItem component");
+                console.error('Warning: SubMenu has a child which is not a MenuItem component');
             }
         });
-        return (React.createElement(Transition, { animation: "zoom-in-left", timeout: 300, in: menuOpen },
+        return (React.createElement(Transition, { animation: 'zoom-in-left', timeout: 300, in: menuOpen },
             React.createElement("ul", { className: subMenuClasses }, childrenComponent)));
     };
     return (React.createElement("li", __assign({ className: classes, key: index }, hoverEvents),
@@ -76,5 +76,5 @@ var SubMenu = function (_a) {
             React.createElement(Icon, { icon: "angle-down", className: "arrow-icon" })),
         renderChildren()));
 };
-SubMenu.displayName = "SubMenu";
+SubMenu.displayName = 'SubMenu';
 export default SubMenu;

@@ -1,5 +1,5 @@
-import { FC, CSSProperties } from "react";
-export declare type AlertType = "success" | "default" | "danger" | "warning";
+import { FC, CSSProperties } from 'react';
+export declare type AlertType = 'success' | 'default' | 'danger' | 'warning';
 interface AlertProps {
     /**标题 */
     title: string;

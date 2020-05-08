@@ -1,6 +1,6 @@
 {
   "name": "react-alex-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React components library",
   "author": "Luotongzhou-Alex",
   "private": false,
@@ -13,10 +13,10 @@
     "UI",
     "React"
   ],
-  "homepage": "",
+  "homepage": "https://luotongzhou.github.io/react-alex-ui/",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/luotongzhou/react-alex-ui"
   },
   "files": [
     "dist"
@@ -43,11 +43,11 @@
     "build-css": "node-sass ./src/styles/index.scss ./dist/index.css",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run test:nowatch && npm run lint && npm run build"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint"
+      "pre-commit": "npm run test:nowatch && npm run lint"
     }
   },
   "eslintConfig": {

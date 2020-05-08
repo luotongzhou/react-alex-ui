@@ -1,5 +1,5 @@
-import React, { CSSProperties, FC } from "react";
-declare type MenuMode = "horizontal" | "vertical";
+import React, { CSSProperties, FC } from 'react';
+declare type MenuMode = 'horizontal' | 'vertical';
 export interface MenuProps {
     /**默认 active 的菜单项的索引值 */
     defaultIndex?: string;

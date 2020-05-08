@@ -1,9 +1,9 @@
-import React from "react";
-import Button from "./components/Button";
-import Alert from "./components/Alert";
-import Menu from "./components/Menu";
-import Tabs from "./components/Tabs";
-import Icon from "./components/Icon";
+import React from 'react';
+import Button from './components/Button';
+import Alert from './components/Alert';
+import Menu from './components/Menu';
+import Tabs from './components/Tabs';
+import Icon from './components/Icon';
 var Item = Menu.Item, SubMenu = Menu.SubMenu;
 function App() {
     return (React.createElement("div", { className: "App" },
@@ -21,7 +21,7 @@ function App() {
             React.createElement(Alert, { type: "danger", className: "haha", closable: false, title: "hello world" }),
             React.createElement(Alert, { type: "success", style: { width: 600, height: 100 }, closable: false, title: "hello world", description: "hello fucking world" })),
         React.createElement("div", { style: { marginBottom: 20 } },
-            React.createElement(Menu, { mode: "vertical", defaultIndex: "1", defaultOpenSubMenus: ["3"], onSelect: function (index) { return console.log(index); } },
+            React.createElement(Menu, { mode: "vertical", defaultIndex: "1", defaultOpenSubMenus: ['3'], onSelect: function (index) { return console.log(index); } },
                 React.createElement(Item, null, "1111"),
                 React.createElement(Item, null, "2222"),
                 React.createElement(Item, { disabled: true }, "3333"),
