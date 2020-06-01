@@ -13,7 +13,7 @@ interface AlertProps {
   /**类型 四种可选 针对四种不同的场景 */
   type?: AlertType
   /**关闭alert时触发的事件 */
-  onClose?: () => void
+  onClose?: (e: React.MouseEvent) => void
   /**是否显示关闭图标*/
   closable?: boolean
   /**添加最外层自定义类名*/
@@ -42,7 +42,7 @@ const Alert: FC<AlertProps> = (props) => {
 
   const handleClose = (e: React.MouseEvent) => {
     if (onClose) {
-      onClose()
+      onClose(e)
     }
     setHide(true)
   }

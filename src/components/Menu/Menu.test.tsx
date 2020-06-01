@@ -41,7 +41,7 @@ const generateMenu = (props: MenuProps) => {
   )
 }
 const createStyleFile = () => {
-  const cssFile: string = `
+  const cssFile = `
     .alex-submenu {
       display: none;
     }
